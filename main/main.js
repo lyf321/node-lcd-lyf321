@@ -1,8 +1,8 @@
 var fixtures = require('../test/fixtures');
 
 function printLcd(input) {
-    var newArray = splitInput(input);
-    var lcdDigits = buildLcdDigits(newArray);
+    var digitArray = splitInput(input);
+    var lcdDigits = matchLcdDigits(digitArray);
     var string = getLcdDigit(lcdDigits);
     console.log(string);
 }
@@ -12,7 +12,7 @@ function splitInput(input) {
     return input.split("");
 }
 
-function buildLcdDigits(newArray) {
+function matchLcdDigits(newArray) {
     var lcdDigits = [];
     var allDigits = fixtures.loadAllLcdDigits();
 
@@ -43,6 +43,6 @@ function getLcdDigit(lcdDigits) {
 module.exports = {
     printLcd:printLcd,
     splitInput: splitInput,
-    buildLcdDigits: buildLcdDigits,
+    matchLcdDigits: matchLcdDigits,
     getLcdDigit: getLcdDigit
 };
